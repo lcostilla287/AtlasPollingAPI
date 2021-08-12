@@ -90,6 +90,8 @@
       <DependentUpon>202108121541436_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Poll.cs" />
+    <Compile Include="PollOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -61,5 +61,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AtlasPolling.Data\AtlasPolling.Data.csproj">
+      <Project>{df547cff-828f-4fb8-bf0a-fe3c03057e59}</Project>
+      <Name>AtlasPolling.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AtlasPolling.Models\AtlasPolling.Models.csproj">
+      <Project>{154d1bed-4f4f-4025-82fd-61a632270ab3}</Project>
+      <Name>AtlasPolling.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

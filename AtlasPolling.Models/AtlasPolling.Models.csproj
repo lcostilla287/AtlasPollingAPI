@@ -55,11 +55,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="PollModels\PollCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PollOptionModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AtlasPolling.Data\AtlasPolling.Data.csproj">
+      <Project>{df547cff-828f-4fb8-bf0a-fe3c03057e59}</Project>
+      <Name>AtlasPolling.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
