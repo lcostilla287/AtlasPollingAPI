@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using AtlasPollingAPI.Models;
 using AtlasPollingAPI.Providers;
 using AtlasPollingAPI.Results;
+using AtlasPollingAPI.Data;
 
 namespace AtlasPollingAPI.Controllers
 {
