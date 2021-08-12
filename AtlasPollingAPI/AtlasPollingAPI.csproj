@@ -307,6 +307,20 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AtlasPolling.Data\AtlasPolling.Data.csproj">
+      <Project>{df547cff-828f-4fb8-bf0a-fe3c03057e59}</Project>
+      <Name>AtlasPolling.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AtlasPolling.Models\AtlasPolling.Models.csproj">
+      <Project>{154d1bed-4f4f-4025-82fd-61a632270ab3}</Project>
+      <Name>AtlasPolling.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AtlasPolling.Services\AtlasPolling.Services.csproj">
+      <Project>{7653a3e2-3909-459f-bf26-cb2f02e72bfe}</Project>
+      <Name>AtlasPolling.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

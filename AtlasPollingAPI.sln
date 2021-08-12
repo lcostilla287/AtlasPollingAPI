@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtlasPollingAPI", "AtlasPollingAPI\AtlasPollingAPI.csproj", "{1D71F275-1735-42CC-A630-1FB28B44CAAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtlasPolling.Data", "AtlasPolling.Data\AtlasPolling.Data.csproj", "{DF547CFF-828F-4FB8-BF0A-FE3C03057E59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtlasPolling.Models", "AtlasPolling.Models\AtlasPolling.Models.csproj", "{154D1BED-4F4F-4025-82FD-61A632270AB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtlasPolling.Services", "AtlasPolling.Services\AtlasPolling.Services.csproj", "{7653A3E2-3909-459F-BF26-CB2F02E72BFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{1D71F275-1735-42CC-A630-1FB28B44CAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D71F275-1735-42CC-A630-1FB28B44CAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D71F275-1735-42CC-A630-1FB28B44CAAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF547CFF-828F-4FB8-BF0A-FE3C03057E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF547CFF-828F-4FB8-BF0A-FE3C03057E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF547CFF-828F-4FB8-BF0A-FE3C03057E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF547CFF-828F-4FB8-BF0A-FE3C03057E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{154D1BED-4F4F-4025-82FD-61A632270AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{154D1BED-4F4F-4025-82FD-61A632270AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{154D1BED-4F4F-4025-82FD-61A632270AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{154D1BED-4F4F-4025-82FD-61A632270AB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7653A3E2-3909-459F-BF26-CB2F02E72BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7653A3E2-3909-459F-BF26-CB2F02E72BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7653A3E2-3909-459F-BF26-CB2F02E72BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7653A3E2-3909-459F-BF26-CB2F02E72BFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
