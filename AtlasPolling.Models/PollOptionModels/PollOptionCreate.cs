@@ -14,5 +14,7 @@ namespace AtlasPolling.Models.PollOptionModels
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         [Display(Name = "Poll Option")]
         public string Description { get; set; }
+
+        public int PollId { get; set; }
     }
 }

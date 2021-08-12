@@ -1,5 +1,6 @@
 ﻿using AtlasPolling.Data;
 using AtlasPolling.Models.PollOptionModels;
+using AtlasPollingAPI.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,11 +23,12 @@ namespace AtlasPolling.Services
                 new PollOption()
                 {
                     CreatorId = _userId,
-                    Description = model.Description
+                    Description = model.Description,
+                    PollId = model.PollIdupdate
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Tickets.Add(entity);
+                ctx.PollOptions.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
