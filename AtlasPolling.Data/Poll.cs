@@ -17,8 +17,10 @@ namespace AtlasPolling.Data
         [Required]
         public string Description { get; set; }
 
-        public DateTimeOffset CreatedUTC { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
 
+        [Required]
+        public Guid CreatorId { get; set; }
         public string CreatedBy { get; set; }
 
         public DateTime PollEnd { get; set; }

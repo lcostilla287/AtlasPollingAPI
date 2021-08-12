@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AtlasPolling.Models.PollOptionModels
 {
-    class PollOptionListItem
+    public class PollOptionListItem
     {
+        public string Description { get; set; }
     }
 }

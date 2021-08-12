@@ -26,6 +26,8 @@ namespace AtlasPolling.Data
             }
 
         }
+        [Required]
+        public Guid CreatorId { get; set; }
 
         [ForeignKey(nameof(Poll))]
         public int PollId { get; set; }

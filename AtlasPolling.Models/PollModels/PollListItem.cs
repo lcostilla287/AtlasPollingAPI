@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace AtlasPolling.Models.PollModels
 {
-    class PollListItem
+   public class PollListItem
     {
+        public string Name { get; set; }
+
+        public string Description { get; set; }
     }
 }
