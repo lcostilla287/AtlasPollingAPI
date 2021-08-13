@@ -60,6 +60,9 @@
     <Compile Include="PollOptionModels\PollOptionCreate.cs" />
     <Compile Include="PollOptionModels\PollOptionListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserModels\UserDetail.cs" />
+    <Compile Include="UserModels\UserEdit.cs" />
+    <Compile Include="UserModels\UserListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
