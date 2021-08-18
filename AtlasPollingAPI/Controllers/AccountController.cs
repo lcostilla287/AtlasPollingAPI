@@ -342,20 +342,28 @@ namespace AtlasPollingAPI.Controllers
             }
             else
             {
-                var userId = user.Id;
                 using (var ctx = new ApplicationDbContext())
                 {
                     if (ctx.Users.Count() == 1)
                     {
+                        var userId = user.Id;
                         ApplicationUser User = UserManager.FindById(userId);
 
-                        var userEditModel = new UserEdit()
+                        new UserEdit()
                         {
                             UserName = User.UserName,
                             Email = User.Email,
                             UserId = User.Id,
                             IsAdmin = true
                         };
+
+                        ctx.Roles.Add(new IdentityRole()
+                        {
+                            Name = "admin"
+                        });
+                        ctx.SaveChanges();
+                        UserManager.AddToRole(userId, "admin");
+                        UserManager.Update(User);
                     }
                 }
             }

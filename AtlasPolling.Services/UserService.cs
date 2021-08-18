@@ -25,4 +25,14 @@ namespace AtlasPolling.Services
             }
         }
     }
+
+    //var currentUserId = User.Identity.GetUserId();
+    //var currentRoles = UserManager.GetRolles(CurrentUserId)
+    //if (!CurrentRoles.Contains("admin")
+    //ModelState.AddModelError("", "You don't have permission to do this")
+
+    //if (UserIsAdmin && !model.IsAdmin)
+    //if (userId == CurrentuserId)
+    //ModelState.AddModelError("","You Can't remove yourself from Admin")
+    //UserManager.RemoveFromRole(userId, "admin")
 }
