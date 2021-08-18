@@ -56,6 +56,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="PollModels\PollCreate.cs" />
+    <Compile Include="PollModels\PollDetail.cs" />
+    <Compile Include="PollModels\PollEdit.cs" />
     <Compile Include="PollModels\PollListItem.cs" />
     <Compile Include="PollOptionModels\PollOptionCreate.cs" />
     <Compile Include="PollOptionModels\PollOptionListItem.cs" />
