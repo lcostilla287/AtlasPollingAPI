@@ -17,6 +17,9 @@ using AtlasPollingAPI.Models;
 using AtlasPollingAPI.Providers;
 using AtlasPollingAPI.Results;
 using AtlasPollingAPI.Data;
+using AtlasPolling.Services;
+using System.Linq;
+using AtlasPolling.Models.UserModels;
 
 namespace AtlasPollingAPI.Controllers
 {
@@ -126,7 +129,7 @@ namespace AtlasPollingAPI.Controllers
 
             IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword,
                 model.NewPassword);
-            
+
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
@@ -259,9 +262,9 @@ namespace AtlasPollingAPI.Controllers
             if (hasRegistered)
             {
                 Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
-                
-                 ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
-                    OAuthDefaults.AuthenticationType);
+
+                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
+                   OAuthDefaults.AuthenticationType);
                 ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
                     CookieAuthenticationDefaults.AuthenticationType);
 
@@ -337,10 +340,85 @@ namespace AtlasPollingAPI.Controllers
             {
                 return GetErrorResult(result);
             }
+            else
+            {
+                using (var ctx = new ApplicationDbContext())
+                {
+                    if (ctx.Users.Count() == 1)
+                    {
+                        var userId = user.Id;
+                        ApplicationUser User = UserManager.FindById(userId);
 
+                        new UserEdit()
+                        {
+                            UserName = User.UserName,
+                            Email = User.Email,
+                            UserId = User.Id,
+                            IsAdmin = true
+                        };
+
+                        ctx.Roles.Add(new IdentityRole()
+                        {
+                            Name = "admin"
+                        });
+                        ctx.SaveChanges();
+                        UserManager.AddToRole(userId, "admin");
+                        UserManager.Update(User);
+                    }
+                }
+            }
             return Ok();
         }
+        /// <summary>
+        /// My Stuff below here
+        /// </summary>
+        /// <returns></returns>
+        //GET api/Account
+        public IHttpActionResult Get()
+        {
+            var userService = new UserService();
+            var users = userService.GetAllUsers();
 
+            var userList = users.Select(u =>
+            {
+                return new UserListItem()
+                {
+                    UserId = u.Id,
+                    UserName = u.UserName,
+                    Email = u.Email
+                };
+            }).ToList();
+            return Ok(userList);
+        }
+
+        //GET api/Account/{id}
+        public IHttpActionResult Get(string userId)
+        {
+            ApplicationUser User = UserManager.FindById(userId);
+            var userDetailModel = new UserDetail()
+            {
+                UserName = User.UserName,
+                Email = User.Email,
+                UserId = User.Id
+            };
+            return Ok(userDetailModel);
+        }
+
+        public IHttpActionResult Edit(string userId)
+        {
+            ApplicationUser User = UserManager.FindById(userId);
+            var userEditModel = new UserEdit()
+            {
+                UserName = User.UserName,
+                Email = User.Email,
+                UserId = User.Id
+            };
+            return Ok(userEditModel);
+        }
+        /// <summary>
+        /// MY Stuff above here
+        /// </summary>
+        /// <returns></returns>
         // POST api/Account/RegisterExternal
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
@@ -369,7 +447,7 @@ namespace AtlasPollingAPI.Controllers
             result = await UserManager.AddLoginAsync(user.Id, info.Login);
             if (!result.Succeeded)
             {
-                return GetErrorResult(result); 
+                return GetErrorResult(result);
             }
             return Ok();
         }
