@@ -366,8 +366,8 @@ namespace AtlasPollingAPI.Controllers
                         UserManager.Update(User);
                     }
                 }
+                return Ok();
             }
-            return Ok();
         }
         /// <summary>
         /// My Stuff below here
@@ -464,7 +464,7 @@ namespace AtlasPollingAPI.Controllers
         }
 
         #region Helpers
-
+       
         private IAuthenticationManager Authentication
         {
             get { return Request.GetOwinContext().Authentication; }
